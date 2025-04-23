@@ -15,17 +15,17 @@ public class UserController {
     private UserRepository userRepository;
 
     
-    // Show signup form
+
     @GetMapping("/signup")
     public String showSignupForm(Model model) {
         model.addAttribute("user", new User());
-        return "signup";  // Will look for signup.html in /src/main/resources/templates
+        return "signup";  
     }
 
    
     @PostMapping("/success")
     public String registerUser(@ModelAttribute User user) {
-        userRepository.save(user);  // Save the user to the database
-        return "success";  // Redirect to success page after signup
+        userRepository.save(user); 
+        return "success"; 
     }
 }
